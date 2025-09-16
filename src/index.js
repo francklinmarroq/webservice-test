@@ -14,7 +14,8 @@ app.get('/v1/', (req, res) => {
    
 
     const verifyToken = req.query.hub_verify_token;
-
+    
+    console.log(req.query);
     console.log(verifyToken);
     
 });
