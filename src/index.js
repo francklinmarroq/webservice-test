@@ -14,6 +14,7 @@ app.get('/v1/', (req, res) => {
     const hubChallenge = req.query["hub.challenge"];
     const verifyToken = req.query["hub.verify_token"];
 
+
     if(hubMode != undefined && hubChallenge !=  undefined && verifyToken != undefined){
         if (hubMode === 'subscribe' && verifyToken === process.env.VERIFY_TOKEN){
             console.log("Webhook verified. ", hubChallenge);
@@ -26,11 +27,11 @@ app.get('/v1/', (req, res) => {
     }else{
         res.status(404);
         res.json("Something went wrong. Check that all parameters are being passed.")
-    }
-
-
-    
-    
+    }   
+});
+app.post("/v1/", (req, res)=>{
+    console.log(req.body);
+    res.send(200)
 });
 
 1
