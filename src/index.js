@@ -11,9 +11,7 @@ const port = process.env.PORT;
 app.get('/v1/', (req, res) => {
 
     
-    if (Object.keys(receivedJson).length === 0) {
-        return res.status(400).json({ error: "No se recibió un cuerpo de solicitud JSON válido." });
-    }
+   
 
     const verifyToken = req.query.hub_verify_token;
 
@@ -21,7 +19,7 @@ app.get('/v1/', (req, res) => {
     
 });
 
-
+1
 app.listen(port, () => {
     console.log(`Servidor de eco escuchando en http://localhost:${port}`);
 });
