@@ -1,10 +1,12 @@
 import express from 'express'
 const app = express();
-const port = 3000;
+import dotenv from 'dotenv'
 
 
 app.use(express.json());
+dotenv.config()
 
+const port = process.env.PORT;
 
 app.post('/v1/', (req, res) => {
     const receivedJson = req.body;
