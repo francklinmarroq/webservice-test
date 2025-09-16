@@ -8,8 +8,7 @@ dotenv.config()
 
 const port = process.env.PORT;
 
-app.post('/v1/', (req, res) => {
-    const receivedJson = req.body;
+app.get('/v1/', (req, res) => {
 
     
     if (Object.keys(receivedJson).length === 0) {
@@ -20,9 +19,6 @@ app.post('/v1/', (req, res) => {
 
     console.log(verifyToken);
     
-    
-    res.json(receivedJson);
-    console.log(receivedJson);
 });
 
 
