@@ -15,9 +15,14 @@ app.post('/v1/', (req, res) => {
     if (Object.keys(receivedJson).length === 0) {
         return res.status(400).json({ error: "No se recibió un cuerpo de solicitud JSON válido." });
     }
+
+    const verifyToken = req.query.hub_verify_token;
+
+    console.log(verifyToken);
+    
     
     res.json(receivedJson);
-    console.log(receivedJson)
+    console.log(receivedJson);
 });
 
 
