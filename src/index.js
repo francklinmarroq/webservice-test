@@ -30,7 +30,7 @@ app.get('/v1/', (req, res) => {
     }   
 });
 app.post("/v1/", (req, res)=>{
-    console.log(req.body);
+    console.log(req.body.entry[0].messaging);
     res.send(200)
 });
 
